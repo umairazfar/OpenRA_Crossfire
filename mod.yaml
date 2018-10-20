@@ -1,0 +1,219 @@
+Metadata:
+	Title: Crossfire
+	Description: Pakistan and India have had 4 wars\nand the enmity still continues.\nDuring these wars, the people who suffer are the civilians\n\nCrossfire is an attemp to demonstrate that no matter\nwhich side wins, the losers are only civilians.\nWe hope to bring this reality to the front in this mod.
+	Version: playtest-20141001
+	Author: Umair Azfar Khan
+	Honorable Mentions: BaronOfStuff from OpenRA forum for helping me in recoloring a few SHPs so that I can use them here.
+	Assets: I have borrowed assets from other mods as well and am using models that I found on OpenRA forums. Some people who need to be mentioned are:
+	RA - Entrenched mod by Petrenko
+	RA - Tiberium Origins mod by kaneCVR
+	RA - TacoRA by tacozmeister
+
+Folders:
+	.
+	./mods/crossfire
+	./mods/crossfire/bits
+	./mods/crossfire/bits/desert
+	./mods/crossfire/uibits
+	~^Content/crossfire
+
+MapFolders:
+	./mods/crossfire/maps: System
+	~^maps/crossfire: User
+
+Packages:
+	~main.mix
+	redalert.mix
+	conquer.mix
+	hires.mix
+	local.mix
+	sounds.mix
+	speech.mix
+	allies.mix
+	russian.mix
+	temperat.mix
+	snow.mix
+	interior.mix
+	~scores.mix
+	~movies1.mix
+	~movies2.mix
+
+Rules:
+	./mods/crossfire/rules/misc.yaml
+	./mods/crossfire/rules/ai.yaml
+	./mods/crossfire/rules/player.yaml
+	./mods/crossfire/rules/world.yaml
+	./mods/crossfire/rules/defaults.yaml
+	./mods/crossfire/rules/vehicles.yaml
+	./mods/crossfire/rules/husks.yaml
+	./mods/crossfire/rules/structures.yaml
+	./mods/crossfire/rules/infantry.yaml
+	./mods/crossfire/rules/civilian.yaml
+	./mods/crossfire/rules/decoration.yaml
+	./mods/crossfire/rules/aircraft.yaml
+	./mods/crossfire/rules/ships.yaml
+
+Sequences:
+	./mods/crossfire/sequences/ships.yaml
+	./mods/crossfire/sequences/vehicles.yaml
+	./mods/crossfire/sequences/structures.yaml
+	./mods/crossfire/sequences/infantry.yaml
+	./mods/crossfire/sequences/aircraft.yaml
+	./mods/crossfire/sequences/misc.yaml
+	./mods/crossfire/sequences/decorations.yaml
+
+Cursors:
+	./mods/crossfire/cursors.yaml
+
+Chrome:
+	./mods/crossfire/chrome.yaml
+
+Assemblies:
+	./mods/common/OpenRA.Mods.Common.dll
+	./mods/ra/OpenRA.Mods.RA.dll
+	./mods/cnc/OpenRA.Mods.Cnc.dll
+	./mods/d2k/OpenRA.Mods.D2k.dll
+
+ChromeLayout:
+	./mods/ra/chrome/install.yaml
+	./mods/ra/chrome/ingame.yaml
+	./mods/ra/chrome/ingame-chat.yaml
+	./mods/ra/chrome/ingame-diplomacy.yaml
+	./mods/ra/chrome/ingame-fmvplayer.yaml
+	./mods/ra/chrome/ingame-info.yaml
+	./mods/ra/chrome/ingame-infobriefing.yaml
+	./mods/ra/chrome/ingame-infoobjectives.yaml
+	./mods/ra/chrome/ingame-infostats.yaml
+	./mods/ra/chrome/ingame-leavemap.yaml
+	./mods/ra/chrome/ingame-menu.yaml
+	./mods/ra/chrome/ingame-observer.yaml
+	./mods/ra/chrome/ingame-observerstats.yaml
+	./mods/ra/chrome/ingame-player.yaml
+	./mods/ra/chrome/ingame-debug.yaml
+	./mods/ra/chrome/mainmenu.yaml
+	./mods/ra/chrome/settings.yaml
+	./mods/ra/chrome/credits.yaml
+	./mods/ra/chrome/lobby.yaml
+	./mods/ra/chrome/lobby-mappreview.yaml
+	./mods/ra/chrome/lobby-playerbin.yaml
+	./mods/ra/chrome/lobby-dialogs.yaml
+	./mods/ra/chrome/color-picker.yaml
+	./mods/ra/chrome/map-chooser.yaml
+	./mods/ra/chrome/create-server.yaml
+	./mods/ra/chrome/serverbrowser.yaml
+	./mods/ra/chrome/connection.yaml
+	./mods/ra/chrome/directconnect.yaml
+	./mods/ra/chrome/replaybrowser.yaml
+	./mods/ra/chrome/dropdowns.yaml
+	./mods/ra/chrome/musicplayer.yaml
+	./mods/ra/chrome/tooltips.yaml
+	./mods/ra/chrome/assetbrowser.yaml
+	./mods/ra/chrome/irc.yaml
+	./mods/ra/chrome/missionbrowser.yaml
+	./mods/ra/chrome/confirmation-dialogs.yaml
+
+Weapons:
+	./mods/crossfire/weapons.yaml
+	
+Voices:
+	./mods/crossfire/voices.yaml
+
+Notifications:
+	./mods/crossfire/notifications.yaml
+	
+TileSets:
+	./mods/ra/tilesets/snow.yaml
+	./mods/ra/tilesets/interior.yaml
+	./mods/ra/tilesets/temperat.yaml
+	./mods/ra/tilesets/desert.yaml
+
+Music:
+	./mods/crossfire/music.yaml
+
+Movies:
+	./mods/crossfire/movies1.yaml
+	./mods/crossfire/movies2.yaml
+
+Translations:
+	./mods/crossfire/languages/english.yaml
+
+LoadScreen: DefaultLoadScreen
+	Image: ./mods/crossfire/uibits/loadscreen.png
+	Text: Filling Crates..., Charging Capacitors..., Reticulating Splines..., Planting Trees..., Building Bridges..., Aging Empires..., Compiling EVA..., Constructing Pylons..., Activating Skynet..., Splitting Atoms...
+
+ContentInstaller:
+	InstallerMenuWidget: INSTALL_PANEL
+	TestFiles: allies.mix, conquer.mix, interior.mix, redalert.mix, russian.mix, snow.mix, sounds.mix, temperat.mix
+	PackageMirrorList: http://www.openra.net/packages/ra-mirrors.txt
+	DiskTestFiles: MAIN.MIX, INSTALL/REDALERT.MIX
+	PackageToExtractFromCD: MAIN.MIX
+	ExtractFilesFromCD: conquer.mix, russian.mix, allies.mix, sounds.mix, scores.mix, snow.mix, interior.mix, temperat.mix, general.mix
+	CopyFilesFromCD: INSTALL/REDALERT.MIX
+	ShippedSoundtracks: 2
+	MusicPackageMirrorList: http://www.openra.net/packages/ra-music-mirrors.txt
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+	LobbySettingsNotification
+	ColorValidator
+
+LobbyDefaults:
+	AllowCheats: false
+	Crates: true
+	StartingUnitsClass: none
+	FragileAlliances: false
+	Shroud: true
+	Fog: true
+	TechLevel: Unrestricted
+
+ChromeMetrics:
+	./mods/ra/metrics.yaml
+
+Fonts:
+	Regular:
+		Font:./FreeSans.ttf
+		Size:14
+	Bold:
+		Font:./FreeSansBold.ttf
+		Size:14
+	Title:
+		Font:./mods/ra/ZoodRangmah.ttf
+		Size:48
+	MediumBold:
+		Font:./FreeSansBold.ttf
+		Size:18
+	BigBold:
+		Font:./FreeSansBold.ttf
+		Size:24
+	Small:
+		Font:FreeSans.ttf
+		Size:12
+	Tiny:
+		Font:./FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font:./FreeSansBold.ttf
+		Size:10
+
+LuaScripts:
+	./mods/common/lua/utils.lua
+	./mods/common/lua/openra.lua
+	./mods/common/lua/map.lua
+	./mods/common/lua/actor.lua
+	./mods/common/lua/team.lua
+	./mods/common/lua/media.lua
+	./mods/common/lua/mission.lua
+	./mods/common/lua/reinforcements.lua
+	./mods/common/lua/supportpowers.lua
+	./mods/common/lua/rules.lua
+	./mods/common/lua/production.lua
+	./mods/common/lua/facing.lua
+
+Missions:
+	./mods/crossfire/missions.yaml
+
+SupportsMapsFrom: ra
+
+SpriteFormats: ShpTD, TmpRA, TmpTD, ShpTS
