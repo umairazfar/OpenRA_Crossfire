@@ -1,0 +1,719 @@
+BADR:
+	ParaDrop:
+		DropRange: 4c0
+	Inherits: ^Plane
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Plane:
+		ROT: 5
+		Speed: 149
+		Repulsable: False
+	RenderUnit:
+	WithShadow:
+	Cargo:
+		MaxWeight: 10
+	-Selectable:
+	-GainsExperience:
+	Tooltip:
+		Name: Badger
+	Contrail@1:
+		Offset: -432,560,0
+	Contrail@2:
+		Offset: -432,-560,0
+	LeavesHusk:
+		HuskActor: BADR.Husk
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	-EjectOnDeath:
+	-GpsDot:
+	RejectsOrders:
+
+BADR.Bomber:
+	AttackBomber:
+	Armament:
+		Weapon: ParaBomb
+	Inherits: ^Plane
+	Health:
+		HP: 300
+	Armor:
+		Type: Light
+	Plane:
+		ROT: 5
+		Speed: 149
+		Repulsable: False
+	LimitedAmmo:
+		Ammo: 7
+	RenderUnit:
+		Image: badr
+	WithShadow:
+	
+	-Selectable:
+	-GainsExperience:
+	Tooltip:
+		Name: Badger
+	Contrail@1:
+		Offset: -432,560,0
+	Contrail@2:
+		Offset: -432,-560,0
+	LeavesHusk:
+		HuskActor: BADR.Husk
+	SmokeTrailWhenDamaged@0:
+		Offset: -432,560,0
+		Interval: 2
+	SmokeTrailWhenDamaged@1:
+		Offset: -432,-560,0
+		Interval: 2
+	-EjectOnDeath:
+	-GpsDot:
+	RejectsOrders:
+
+MIG:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 50
+		Prerequisites: ~advafld, fix, ~aircrafts.soviet
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Mig 27 Attack Bomber
+		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings\n  Weak vs Infantry, Light Vehicles
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+	Armament:
+		Weapon: Napalm
+		PrimaryLocalOffset: -15,0,0,0,-10, 15,0,0,0,6
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		InitialFacing: 192
+		ROT: 4
+		Speed: 156
+		RearmBuildings: advafld
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		CameraPitch: 99
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 8
+	
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	LeavesHusk:
+		HuskActor: MIG.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		
+SU25:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 50
+		Prerequisites: ~afld, fix, ~aircrafts.allies
+	Valued:
+		Cost: 1100
+	Tooltip:
+		Name: Su 25 Attack Bomber
+		Description: Fast Ground-Attack Plane.\n  Strong vs Buildings\n  Weak vs Infantry, Light Vehicles
+	Health:
+		HP: 180
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+	Armament:
+		Weapon: Napalm
+		PrimaryLocalOffset: -15,0,0,0,-10, 15,0,0,0,6
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		InitialFacing: 192
+		ROT: 4
+		Speed: 149
+		RearmBuildings: advafld
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		CameraPitch: 99
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 8
+	
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0
+	LeavesHusk:
+		HuskActor: SU25.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+
+YAK:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 30
+		Prerequisites: advafld, ~aircrafts.soviet, ~techlevel.medium
+	Valued:
+		Cost: 350
+	Tooltip:
+		Name: Akash Reconnaissance Plane
+		Description: Reconnaissance Plane.\n  Strong vs Infantry, Tanks\n  Weak vs Buildings
+	Health:
+		HP: 60
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 18c0
+	Armament@PRIMARY:
+		Weapon: ChainGun.Yak
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun.Yak
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		RearmBuildings: afld
+		InitialFacing: 192
+		ROT: 4
+		Speed: 178
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		CameraPitch: 99
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 18
+		PipCount: 6
+		ReloadTicks: 11
+	
+	ReturnOnIdle:
+	Selectable:
+		Voice: YakVoice
+		Bounds: 30,28,0,2
+	WithMuzzleFlash:
+	Contrail:
+		Offset: -853,0,0
+	LeavesHusk:
+		HuskActor: YAK.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,0
+		Interval: 2
+		
+MUSHAK:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 30
+		Prerequisites: afld, ~aircrafts.allies, ~techlevel.medium
+	Valued:
+		Cost: 380
+	Tooltip:
+		Name: Mushak Recon Plane
+		Description: reconnaissance Plane.\n  Strong vs Infantry, Tanks\n  Weak vs Buildings
+	Health:
+		HP: 70
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 18c0
+	Armament@PRIMARY:
+		Weapon: ChainGun.Yak
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun.Yak
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		RearmBuildings: afld
+		InitialFacing: 192
+		ROT: 4
+		Speed: 153
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		CameraPitch: 99
+		Scale: 0.7
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 18
+		PipCount: 6
+		ReloadTicks: 11
+	
+	ReturnOnIdle:
+	LeavesHusk:
+		HuskActor: Mushak.Husk
+	Selectable:
+		Voice: MushVoice
+		Bounds: 30,28,0,2
+	WithMuzzleFlash:
+	Contrail:
+		Offset: -853,0,0
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,0
+		Interval: 2
+
+TRAN:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 10
+		Prerequisites: ~hpad, ~techlevel.medium
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Transport Helicopter
+		Description: Fast Infantry Transport Helicopter.\n  Unarmed
+	Health:
+		HP: 120
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+	Helicopter:
+		RearmBuildings: hpad
+		InitialFacing: 0
+		ROT: 5
+		Speed: 112
+		LandableTerrainTypes: Clear,Rough,Road,Ore,Beach
+		AltitudeVelocity: 0c100
+	RenderUnit:
+	WithRotor@PRIMARY:
+		Offset: -597,0,341
+		Sequence: rotor2
+		GroundSequence: slow-rotor2
+	WithRotor@SECONDARY:
+		Id: rotor_2
+		Offset: 597,0,213
+	WithShadow:
+	Cargo:
+		Types: Infantry
+		MaxWeight: 8
+		PipCount: 8
+	
+	LeavesHusk:
+		HuskActor: TRAN.Husk
+
+HELI:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 40
+		Prerequisites: ~hpad, ~helicopters.allies, ~techlevel.unrestricted
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Longbow
+		Description: Helicopter Gunship with AG Missiles.\n  Strong vs Tanks\n  Weak vs Infantry
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+	Armament@PRIMARY:
+		Weapon: HellfireAA
+		LocalOffset: 0,-213,-85
+	Armament@SECONDARY:
+		Weapon: HellfireAG
+		LocalOffset: 0,213,-85
+	AttackHeli:
+		FacingTolerance: 20
+	Helicopter:
+		RearmBuildings: hpad
+		LandWhenIdle: false
+		InitialFacing: 20
+		ROT: 4
+		Speed: 149
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+	WithRotor:
+		Offset: 0,0,85
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 16
+	
+	Selectable:
+		Bounds: 36,28,0,0
+	LeavesHusk:
+		HuskActor: HELI.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+
+HIND:
+	Inherits: ^Helicopter
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Helicopter
+		BuildPaletteOrder: 20
+		Prerequisites: ~hpad, ~helicopters.soviet, ~techlevel.unrestricted
+	Valued:
+		Cost: 1050
+	Tooltip:
+		Name: Hind
+		Description: Helicopter Gunship with Chainguns.\n  Strong vs Infantry, Light Vehicles.\n  Weak vs Tanks
+	Health:
+		HP: 180
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 11c0
+	Armament@PRIMARY:
+		Weapon: HellfireAA
+		LocalOffset: 0, 0,-85
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: ChainGun
+		LocalOffset: 685,0,-105
+		MuzzleSequence: muzzle
+	AttackHeli:
+		FacingTolerance: 20
+	Helicopter:
+		RearmBuildings: hpad
+		LandWhenIdle: false
+		InitialFacing: 20
+		ROT: 4
+		Speed: 112
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+	WithRotor:
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 36
+		PipCount: 6
+		ReloadTicks: 6
+	
+	Selectable:
+		Bounds: 38,32,0,0
+	WithMuzzleFlash:
+	LeavesHusk:
+		HuskActor: HIND.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -427,0,0
+
+U2:
+	Inherits: ^Plane
+	Health:
+		HP: 2000
+	Armor:
+		Type: Heavy
+	Plane:
+		ROT: 7
+		Speed: 373
+		Repulsable: False
+	RenderUnit:
+	WithShadow:
+	
+	AttackBomber:
+	-Selectable:
+	-GainsExperience:
+	Contrail@1:
+		Offset: -725,683,0
+	Contrail@2:
+		Offset: -725,-683,0
+	LeavesHusk:
+		HuskActor: U2.Husk
+	SmokeTrailWhenDamaged:
+		Offset: -1c43,0,0
+		Interval: 2
+	RejectsOrders:
+
+MIG21:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 30
+		Prerequisites: advafld, ~aircrafts.soviet, ~techlevel.medium
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Mig-21 Fishbed
+		Description: Air Superiority fighter.\n  Strong vs Infantry, Tanks\n  Weak vs Buildings
+	Health:
+		HP: 80
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Armament@PRIMARY:
+		Weapon: Attol
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: Attol
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		RearmBuildings: advafld
+		InitialFacing: 192
+		ROT: 4
+		Speed: 178
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		Image: mig21
+		CameraPitch: 99
+		Scale: 0.8
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 6
+		PipCount: 6
+		ReloadTicks: 8
+	
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 30,28,0,2
+	WithMuzzleFlash:
+	LeavesHusk:
+		HuskActor: MIG21.Husk
+	Contrail:
+		Offset: -853,0,0
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,0
+		Interval: 2
+		
+MIG19:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 30
+		Prerequisites: afld, ~aircrafts.allies, ~techlevel.medium
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: F-6 Farmer
+		Description: Air Superiority fighter.\n  Strong vs Infantry, Tanks\n  Weak vs Buildings
+	Health:
+		HP: 90
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	Armament@PRIMARY:
+		Weapon: Sidewinder
+		LocalOffset: 256,-213,0
+		MuzzleSequence: muzzle
+	Armament@SECONDARY:
+		Name: secondary
+		Weapon: Sidewinder
+		LocalOffset: 256,213,0
+		MuzzleSequence: muzzle
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		RearmBuildings: afld
+		InitialFacing: 192
+		ROT: 4
+		Speed: 165
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		Image: mig19
+		CameraPitch: 99
+		Scale: 0.8
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 6
+		PipCount: 6
+		ReloadTicks: 8
+	
+	ReturnOnIdle:
+	Selectable:
+		Voice: F16Voice
+		Bounds: 30,28,0,2
+	WithMuzzleFlash:
+	LeavesHusk:
+		HuskActor: MIG19.Husk
+	Contrail:
+		Offset: -853,0,0
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,0
+		Interval: 2
+
+MIG29:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 90
+		Prerequisites: advafld, ~aircrafts.soviet, ~stek 
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Mig-29 Fighter Bomber
+		Description: Fast Multirole Aircraft.\n  Strong vs Everything\n  Weak vs Anti Aircraft Fire
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Armament@PRIMARY:
+		Weapon: Attol
+		MuzzleSequence: muzzle
+		LocalOffset: 0,-340,0, 0,340,0
+		LocalYaw: -40, 24
+	Armament@SECONDARY:
+		Weapon: Maverick
+		MuzzleSequence: muzzle
+		LocalOffset: 0,-340,0, 0,340,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		InitialFacing: 192
+		ROT: 6
+		Speed: 206
+		RearmBuildings: advafld
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		CameraPitch: 99
+		Scale: 0.8
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 16
+		PipCount: 8
+		ReloadTicks: 16
+	
+	LeavesHusk:
+		HuskActor: MIG29.Husk
+	ReturnOnIdle:
+	Selectable:
+		Bounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0	
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2
+		
+F16:
+	Inherits: ^Plane
+	Buildable:
+		Queue: Aircraft
+		BuildAtProductionType: Plane
+		BuildPaletteOrder: 90
+		Prerequisites: afld, ~atek, ~aircrafts.allies
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: F-16 Fighter Bomber
+		Description: Fast Multirole Aircraft.\n  Strong vs Everything\n  Weak vs Anti Aircraft Fire
+	Health:
+		HP: 160
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	Armament@PRIMARY:
+		Weapon: Sidewinder
+		MuzzleSequence: muzzle
+		LocalOffset: 0,-340,0, 0,340,0
+		LocalYaw: -40, 24
+	Armament@SECONDARY:
+		Weapon: Maverick
+		MuzzleSequence: muzzle
+		LocalOffset: 0,-340,0, 0,340,0
+		LocalYaw: -40, 24
+	AttackPlane:
+		FacingTolerance: 20
+	Plane:
+		InitialFacing: 192
+		ROT: 6
+		Speed: 196
+		RearmBuildings: afld
+		RepulsionSpeed: 40
+	AutoTarget:
+		TargetWhenIdle: false
+		TargetWhenDamaged: false
+		EnableStances: false
+	RenderUnit:
+		Image: f16
+		CameraPitch: 99
+	WithShadow:
+	LimitedAmmo:
+		Ammo: 16
+		PipCount: 8
+		ReloadTicks: 16	
+	ReturnOnIdle:
+	LeavesHusk:
+		HuskActor: F16.Husk
+	Selectable:
+		Voice: F16Voice
+		Bounds: 40,29,0,1
+	Contrail@1:
+		Offset: -598,-683,0
+	Contrail@2:
+		Offset: -598,683,0	
+	SmokeTrailWhenDamaged:
+		Offset: -853,0,171
+		Interval: 2

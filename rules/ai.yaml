@@ -1,0 +1,478 @@
+Player:
+	HackyAI@RushAI:
+		Name: Rush AI
+		BuildingCommonNames:
+			ConstructionYard: fact
+			Refinery: proc
+			Power: powr,apwr
+			Barracks: barr,tent
+			VehiclesFactory: weap, havyweap
+			Production: barr,tent,weap,havyweap,afld,advweap,hpad,spen,syrd
+			Silo: silo
+		UnitsCommonNames:
+			Mcv: mcv
+		BuildingLimits:
+			proc: 4
+			barr: 2
+			tent: 2
+			dome: 1
+			weap: 3
+			havyweap: 3
+			spen: 1
+			syrd: 1
+			hpad: 4
+			afld: 4
+			advafld: 4
+			atek: 1
+			stek: 1
+			fix: 1
+		BuildingFractions:
+			proc: 30%
+			powr: 45%
+			barr: 1%
+			tent: 1%
+			weap: 1%
+			havyweap: 1%
+			pbox: 7%
+			gun: 7%
+			tsla: 5%
+			ftur: 10%
+			agun: 5%
+			sam: 5%
+			atek: 1%
+			stek: 1%
+			fix: 0.1%
+			dome: 10%
+			afld: 5%
+			advafld: 5%
+			spen: 5%
+			syrd: 5%
+		UnitsToBuild:
+			e1: 50%
+			e2: 30%
+			e3: 10%
+			e4: 10%
+			gabbar: 10%
+			gnrl: 10%
+			sniper: 20%
+			apc: 30%
+			bmp: 20%
+			jeep: 40%
+			bggy: 40%
+			arty: 10%
+			v2rl: 40%
+			hatf: 40%
+			ftrk: 50%
+			1tnk: 70%
+			veer: 60%
+			2tnk: 25%
+			3tnk: 50%
+			4tnk: 20%
+			akbar: 15%
+			mig: 20%
+			su25: 20%
+			mig21: 15%
+			mig19: 15%
+			f16: 10%
+			mig29: 10%
+			ss: 50%
+			ghazi: 50%
+			msub: 10%
+			dd: 20%
+			mfrg: 20%
+			ca: 10%
+			pt: 20%
+			mslb: 20%
+		SquadSize: 20
+		SupportPowerDecision@Airstrike:
+			OrderName: AirstrikePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@Paratroopers:
+			OrderName: ParatroopersPowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 10c0
+			Consideration@2:
+				Against: Enemy
+				Types: Vehicle, Tank, Infantry, Defense
+				Attractiveness: -10
+				TargetMetric: None
+				CheckRadius: 10c0
+		SupportPowerDecision@NukePower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@NormalAI:
+		Name: Normal AI
+		BuildingCommonNames:
+			ConstructionYard: fact
+			Refinery: proc
+			Power: powr,apwr
+			Barracks: barr,tent
+			VehiclesFactory: weap
+			Production: barr,tent,weap,havyweap,afld,advweap,hpad,spen,syrd
+			Silo: silo
+		UnitsCommonNames:
+			Mcv: mcv
+		BuildingLimits:
+			proc: 6
+			barr: 1
+			tent: 1
+			dome: 1
+			weap: 3
+			havyweap: 3
+			spen: 2
+			syrd: 2
+			hpad: 4
+			afld: 6
+			advafld: 6
+			atek: 1
+			stek: 1
+			fix: 1
+		BuildingFractions:
+			proc: 10%
+			powr: 2%
+			apwr: 30%
+			tent: 1%
+			barr: 1%
+			dome: 1%
+			weap: 6%
+			havyweap: 6%
+			hpad: 4%
+			spen: 1%
+			syrd: 1%
+			afld: 4%
+			advafld: 4%
+			pbox: 7%
+			gun: 7%
+			ftur: 10%
+			tsla: 5%
+			fix: 1%
+			agun: 5%
+			sam: 1%
+			atek: 1%
+			stek: 1%
+			mslo: 1%
+		UnitsToBuild:
+			e1: 50%
+			e2: 30%
+			e3: 10%
+			e4: 30%
+			harv: 20%
+			apc: 30%
+			bmp: 30%
+			jeep: 40%
+			bggy: 40%
+			ftrk: 20%
+			maag: 20%
+			1tnk: 50%
+			veer: 50%
+			2tnk: 55%
+			3tnk: 55%
+			heli: 30%
+			hind: 30%
+			mig: 30%
+			yak: 10%
+			mushak: 10%
+			su25: 30%
+			mig21: 15%
+			mig19: 15%
+			f16: 20%
+			mig29: 20%
+			ss: 20%
+			ghazi: 20%
+			msub: 10%
+			dd: 20%
+			mfrg: 20%
+			ca: 10%
+			pt: 20%
+			mslb: 20%
+		SquadSize: 40
+		SupportPowerDecision@Airstrike:
+			OrderName: AirstrikePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@Paratroopers:
+			OrderName: ParatroopersPowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 10c0
+			Consideration@2:
+				Against: Enemy
+				Types: Vehicle, Tank, Infantry, Defense
+				Attractiveness: -10
+				TargetMetric: None
+				CheckRadius: 10c0
+		SupportPowerDecision@NukePower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@TurtleAI:
+		Name: Turtle AI
+		BuildingCommonNames:
+			ConstructionYard: fact
+			Refinery: proc
+			Power: powr,apwr
+			Barracks: barr,tent
+			VehiclesFactory: weap
+			Production: barr,tent,weap,havyweap,afld,advweap,hpad,spen,syrd
+			Silo: silo
+		UnitsCommonNames:
+			Mcv: mcv
+		BuildingLimits:
+			proc: 6
+			barr: 1
+			tent: 1
+			dome: 1
+			weap: 4
+			havyweap: 4
+			spen: 3
+			syrd: 3
+			hpad: 6
+			afld: 6
+			advafld: 6
+			atek: 1
+			stek: 1
+			fix: 1
+		BuildingFractions:
+			proc: 30%
+			powr: 1%
+			apwr: 40%
+			tent: 1%
+			barr: 1%
+			weap: 3%
+			havyweap: 3%
+			hpad: 2%
+			spen: 1%
+			syrd: 1%
+			pbox: 7%
+			gun: 7%
+			ftur: 10%
+			tsla: 5%
+			fix: 0.1%
+			dome: 10%
+			agun: 5%
+			sam: 1%
+			atek: 1%
+			stek: 1%
+			mslo: 1%
+			afld: 1%
+			advafld: 1%
+		UnitsToBuild:
+			e1: 10%
+			e2: 50%
+			e3: 10%
+			e4: 20%
+			sniper: 30%
+			gabbar: 1%
+			gnrl: 1%
+			harv: 10%
+			apc: 30%
+			bmp: 30%
+			jeep: 20%
+			bggy: 20%
+			ftrk: 20%
+			maag: 20%
+			1tnk: 50%
+			veer: 50%
+			2tnk: 55%
+			3tnk: 55%
+			heli: 50%
+			hind: 50%
+			mig: 50%
+			yak: 10%
+			mushak: 10%
+			su25: 50%
+			mig21: 15%
+			mig19: 15%
+			f16: 20%
+			mig29: 20%
+			ss: 20%
+			ghazi: 20%
+			msub: 10%
+			dd: 20%
+			mfrg: 20%
+			ca: 10%
+			pt: 20%
+			mslb: 20%
+		SquadSize: 10
+		SupportPowerDecision@Airstrike:
+			OrderName: AirstrikePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@Paratroopers:
+			OrderName: ParatroopersPowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 10c0
+			Consideration@2:
+				Against: Enemy
+				Types: Vehicle, Tank, Infantry, Defense
+				Attractiveness: -10
+				TargetMetric: None
+				CheckRadius: 10c0
+		SupportPowerDecision@NukePower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+	HackyAI@NavalAI:
+		Name: Naval AI
+		BuildingCommonNames:
+			ConstructionYard: fact
+			Refinery: proc
+			Power: powr,apwr
+			Barracks: barr,tent
+			VehiclesFactory: weap
+			Production: barr,tent,weap,havyweap,afld,advweap,hpad,spen,syrd
+			Silo: silo
+		UnitsCommonNames:
+			Mcv: mcv
+		BuildingLimits:
+			proc: 4
+			dome: 1
+			spen: 3
+			syrd: 3
+			hpad: 8
+			afld: 8
+			advafld: 8
+			weap: 1
+			havyweap: 1
+			atek: 1
+			stek: 1
+		BuildingFractions:
+			proc: 29%
+			powr: 1%
+			apwr: 24%
+			dome: 1%
+			weap: 1%
+			hpad: 20%
+			afld: 20%
+			atek: 1%
+			stek: 1%
+			spen: 2%
+			syrd: 2%
+			pbox: 12%
+			gun: 12%
+			ftur: 12%
+			tsla: 12%
+			agun: 5%
+			sam: 5%
+			mslo: 1%
+		UnitsToBuild:
+			harv: 1%
+			heli: 40%
+			hind: 40%
+			mig: 30%
+			su25: 30%
+			yak: 30%
+			mushak: 30%
+			ss: 30%
+			ghazi: 30%
+			msub: 10%
+			dd: 30%
+			mfrg: 30%
+			ca: 10%
+			pt: 20%
+			mslb: 20%
+		SquadSize: 1
+		SupportPowerDecision@Airstrike:
+			OrderName: AirstrikePowerInfoOrder
+			MinimumAttractiveness: 1
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 5c0
+		SupportPowerDecision@Paratroopers:
+			OrderName: ParatroopersPowerInfoOrder
+			MinimumAttractiveness: 5
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: None
+				CheckRadius: 10c0
+			Consideration@2:
+				Against: Enemy
+				Types: Vehicle, Tank, Infantry, Defense
+				Attractiveness: -10
+				TargetMetric: None
+				CheckRadius: 10c0
+		SupportPowerDecision@NukePower:
+			OrderName: NukePowerInfoOrder
+			MinimumAttractiveness: 3000
+			Consideration@1:
+				Against: Enemy
+				Types: Structure
+				Attractiveness: 1
+				TargetMetric: Value
+				CheckRadius: 5c0
+			Consideration@2:
+				Against: Ally
+				Types: Air, Ground, Water
+				Attractiveness: -10
+				TargetMetric: Value
+				CheckRadius: 7c0
+
